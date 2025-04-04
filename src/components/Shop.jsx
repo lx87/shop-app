@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Preloader from './Preloader';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGoods } from "./redux/slices/shopSlice";
+import { fetchGoods } from "../redux/slices/shopSlice";
 import Items from "./items";
 
 function Shop() {

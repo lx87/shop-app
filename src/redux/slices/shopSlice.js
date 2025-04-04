@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { API_KEY, API_URL } from '../../../config';
+import { API_KEY, API_URL } from '../../config';
 
 async function getGoods() {
   try {
