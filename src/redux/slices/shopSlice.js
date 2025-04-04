@@ -19,7 +19,6 @@ async function getGoods() {
   }
 }
 
-// Создаем асинхронный thunk
 export const fetchGoods = createAsyncThunk(
   'shop/fetchGoods',
   async (_, thunkAPI) => {
@@ -39,14 +38,6 @@ const shopSlice = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {
-    selectCategory: (state, action) => {
-      state.selectedCategory = action.payload;
-    },
-    clearError: (state) => {
-      state.error = null;
-    }
-  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchGoods.pending, (state) => {
@@ -64,6 +55,4 @@ const shopSlice = createSlice({
   },
 });
 
-
-// Экспортируем редюсер
 export default shopSlice.reducer;
