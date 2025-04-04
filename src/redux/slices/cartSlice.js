@@ -4,8 +4,8 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState: {
     items: {}, // Формат: { [itemId]: { item, quantity } }
-    totalItems: 0, // Общее количество товаров в корзине
-    totalPrice: 0, // Общая стоимость корзины
+    totalItems: 0,
+    totalPrice: 0,
   },
   reducers: {
     addItem: (state, action) => {

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../redux/slices/cartSlice";
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 
 const Items = ({ goods }) => {
     const dispatch = useDispatch();

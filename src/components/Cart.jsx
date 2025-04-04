@@ -32,22 +32,20 @@ const Cart = () => {
                             </Button>
                         </ButtonGroup>
                         <h3 className="m-0">${cartItem.item.price.toFixed(2) * cartItem.quantity}</h3>
-                        <button className='btn btn-secondary'
+                        <Button className='btn btn-secondary'
                             onClick={() => {
                                 dispatch(removeItem(mainId));
                                 toast(`"${cartItem.item.name}" removed from cart`, {
                                     action: {
                                       label: 'Undo',
                                       onClick: () => dispatch(addItem({
-                                        id: cartItem.item.mainId,
-                                        name: cartItem.item.name,
-                                        price: cartItem.item.price,
+                                            id: mainId, ...cartItem.item
                                         }))
                                     },
                                 })
                             }}>
                             <i className="bi bi-x-lg"></i>
-                        </button>
+                        </Button>
                     </div>
                 ))}
             </div>
