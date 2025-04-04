@@ -1,0 +1,56 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(54, 56, 70);
+}
+
+.wrapper{
+  width: 100%;
+  height: max-content;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: rgb(54, 56, 70);
+}
+
+.not-found{
+  align-self: center;
+}
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.v-stack.not-found{
+  padding-bottom: 10rem;
+}
+
+.v-stack.not-found.zero{
+  display: block;
+}
+
+.good-item{
+  width: 300px;
+  height: 480px;
+  background-color: rgb(47, 47, 47);
+  color: white;
+  border-radius: 15px;
+}
+
+.card-img{
+  width: 300px;
+  height: 300px;
+}
+
+.goods-list{
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  gap: 80px;
+}
+
+.shop{
+  max-height: 800px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
