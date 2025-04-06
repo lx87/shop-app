@@ -4,12 +4,16 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { increaseQuantity, decreaseQuantity, removeItem } from "../redux/slices/cartSlice";
 import { toast } from 'sonner'
+// import { useEffect } from "react";
 
 const Cart = () => {
     const dispatch = useDispatch();
     const { items } = useSelector(state => state.cart);
     const cartItems = Object.entries(items);
-
+    
+    // useEffect(() => {
+    //     console.log(cartItems);
+    // }, [items, cartItems]);
     return (
         <>
             <div className="cart-items-list gap-2 d-flex flex-column w-100">

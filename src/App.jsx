@@ -1,8 +1,7 @@
-import './App.css'
-import Header from './layout/Header'
-import Footer from './layout/Footer'
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import Header from './layout/Header'
+import Footer from './layout/Footer'
 import { Shop } from './components/Shop';
 import { Toaster } from 'sonner'
 

@@ -6,6 +6,7 @@ import Cart from '../components/Cart';
 const Header = () => {
   const [show, setShow] = useState(false);
   const { totalPrice } = useSelector(state => state.cart);
+  const { totalItems } = useSelector(state => state.cart);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,7 +24,7 @@ const Header = () => {
       <Offcanvas show={show} onHide={handleClose} placement='top'>
         <Offcanvas.Header>
           <Offcanvas.Title>Корзина</Offcanvas.Title>
-          <h2 className="m-0">Total price: ${totalPrice.toFixed(2)}</h2>
+          <h2 className="m-0">Total price: ${totalPrice.toFixed(2)} , {totalItems} items</h2>
           <button className='btn btn-secondary' onClick={handleClose}>
             <i className="bi bi-x-lg"></i>
           </button>
