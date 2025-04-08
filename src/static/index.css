@@ -81,7 +81,7 @@ h3{
 .wrapper{
   width: 100%;
   height: max-content;
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-color: rgb(54, 56, 70);
