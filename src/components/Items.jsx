@@ -4,7 +4,6 @@ import { toast } from 'sonner'
 
 const Items = ({ goods }) => {
     const dispatch = useDispatch();
-    
     if (!Array.isArray(goods)) {
         return <div>No goods available</div>;
     }
@@ -19,13 +18,13 @@ const Items = ({ goods }) => {
     return (
         <div className="goods-list">
             {itemsToRender.map(item => (
-                <div key={item.offerId} className="good-item">
+                <div key={item.uniqueKey} className="good-item">
                     <img
                         src={item.displayAssets[0]?.background !== null
                             ? item.displayAssets[0]?.full_background
                             : `https://placehold.co/600x400?text=${item.displayName}`}
                         alt={item.mainId}
-                        className="card-img" 
+                        className="card-img"
                     />
                     <h3 className="text-start m-0 pt-2 px-3">{item.displayName}</h3>
                     {item.displayDescription && <p className="text-start m-0 px-3">{item.displayDescription}</p>}

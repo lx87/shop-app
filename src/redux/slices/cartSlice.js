@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    items: {},
     //format:
-    // ['test']: {
+    // ['id']: {
     //   item: {
     //     name: 'test',
     //     price: 200
     //   },
     //   quantity: 3
     // }
+    items: {},
     totalItems: 0,
     totalPrice: 0,
   },
@@ -77,13 +77,7 @@ const cartSlice = createSlice({
           delete state.items[itemId];
         }
       }
-    },
-
-    clearCart: (state) => {
-      state.items = {};
-      state.totalItems = 0;
-      state.totalPrice = 0;
-    },
+    }
   },
 });
 
@@ -91,8 +85,7 @@ export const {
   addItem, 
   removeItem, 
   increaseQuantity, 
-  decreaseQuantity, 
-  clearCart 
+  decreaseQuantity
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
