@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import Header from './layout/Header'
 import Footer from './layout/Footer'
-import { Shop } from './components/Shop';
+import { Shop } from './layout/Shop';
 import ToasterProvider from './components/helpers/ToasterProvider';
 
 function App() {

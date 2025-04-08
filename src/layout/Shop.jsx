@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import Preloader from './helpers/Preloader';
+import Preloader from '../components/helpers/Preloader';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGoods } from "../redux/slices/shopSlice";
-import Items from "./Goods";
+import Items from "../components/Items";
 
 function Shop() {
     const dispatch = useDispatch();

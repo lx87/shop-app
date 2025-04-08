@@ -4,6 +4,7 @@ import { toast } from 'sonner'
 
 const Items = ({ goods }) => {
     const dispatch = useDispatch();
+    
     if (!Array.isArray(goods)) {
         return <div>No goods available</div>;
     }
