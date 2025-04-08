@@ -3,26 +3,40 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    items: {}, // Формат: { [itemId]: { item, quantity } }
+    items: {},
+    //format:
+    // ['test']: {
+    //   item: {
+    //     name: 'test',
+    //     price: 200
+    //   },
+    //   quantity: 3
+    // }
     totalItems: 0,
     totalPrice: 0,
   },
   reducers: {
     addItem: (state, action) => {
-      const { id, ...itemData } = action.payload;
+      const { id, quantity, ...itemData } = action.payload;
+      const actualQuantity = Math.max(1, quantity || 1);
       
       if (state.items[id]) {
-        state.items[id].quantity += 1;
+        state.items[id].quantity += actualQuantity;
       } else {
         state.items[id] = {
           item: itemData,
-          quantity: 1,
+          quantity: actualQuantity,
         };
       }
-      console.log('добавлен предмет', state.items);
       
-      state.totalItems += 1;
-      state.totalPrice += itemData.price;
+      state.totalItems += actualQuantity;
+      state.totalPrice += itemData.price * actualQuantity;
+      
+      console.log('Добавлен предмет:', { 
+        id, 
+        ...itemData, 
+        quantity: actualQuantity 
+      });
     },
 
     removeItem: (state, action) => {
@@ -45,7 +59,7 @@ const cartSlice = createSlice({
         existingItem.quantity += 1;
         state.totalItems += 1;
         state.totalPrice += existingItem.item.price;
-      }
+      }   
     },
 
     decreaseQuantity: (state, action) => {

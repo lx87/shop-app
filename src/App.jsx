@@ -3,24 +3,14 @@ import store from './redux/store';
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 import { Shop } from './components/Shop';
-import { Toaster } from 'sonner'
+import ToasterProvider from './components/helpers/ToasterProvider';
 
 function App() {
   return (
    <Provider store={store}>
+    <ToasterProvider/>
      <div className="wrapper">
       <Header />
-        <Toaster
-          toastOptions={{
-              style: {
-              background: '#2d3136',
-              color: 'white',
-              border: 'none',
-              fontSize: '1.2rem',
-              textAlign: 'start'
-              },
-          }}
-        />
         <Shop/>
       <Footer />
     </div>

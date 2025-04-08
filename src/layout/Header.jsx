@@ -5,8 +5,7 @@ import Cart from '../components/Cart';
 
 const Header = () => {
   const [show, setShow] = useState(false);
-  const { totalPrice } = useSelector(state => state.cart);
-  const { totalItems } = useSelector(state => state.cart);
+  const { totalPrice, totalItems } = useSelector(state => state.cart);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -14,7 +13,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand fst-italic fw-bold fs-3" href="#">Fortnite balls</a>
+          <a className="navbar-brand fst-italic fw-bold fs-3" href="#">Shop</a>
           <button className='btn btn-primary d-flex fs-4' onClick={handleShow}> 
             <i className="bi bi-bag-fill text-white me-2"></i>
             <p className='m-0'>${totalPrice.toFixed(2)}</p>
